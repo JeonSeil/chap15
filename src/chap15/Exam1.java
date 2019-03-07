@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
 /* 
  * 화면에서 5명의 점수를 입력받아서 평균과 중간값을 출력하고, 최고점을 받은 학생의 인덱스를 출력하기
  * 
