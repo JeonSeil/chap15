@@ -41,12 +41,14 @@ public class Exam5 {
 		System.out.println("기본정렬방식");
 		TreeSet<Student2> set1 = makeTreeSet(arr,null);   //기본정렬방식(이름)
 		System.out.println("총점기준 내림차순 정렬");
-		TreeSet<Student2> set2 = makeTreeSet(arr,new Comparator<Student2>() {
-			@Override
-			public int compare(Student2 o1, Student2 o2) {
-				return o2.getTotal() - o1.getTotal();
-			}
-		}); 
+//		TreeSet<Student2> set2 = makeTreeSet(arr,new Comparator<Student2>() {
+//			@Override
+//			public int compare(Student2 o1, Student2 o2) {
+//				return o2.getTotal() - o1.getTotal();
+//			}
+//		});
+		//람다방식
+		TreeSet<Student2> set2 = makeTreeSet(arr,(o1,o2)->o2.getTotal()-o1.getTotal());
 		System.out.println("국어 점수내림차순 정렬");
 		TreeSet<Student2> set3 = makeTreeSet(arr,new Comparator<Student2>() {
 			@Override
@@ -72,7 +74,7 @@ public class Exam5 {
 	private static TreeSet<Student2> makeTreeSet(Student2[] arr, Comparator<Student2> c) {
 		TreeSet<Student2> set;
 		if(c == null)
-		    set= new TreeSet<Student2>();
+		    set= new TreeSet<Student2>(); //Student2 클래스에 정의된 정렬 방식
 		else
 		    set = new TreeSet<Student2>(c);
 		for(Student2 s : arr) {
